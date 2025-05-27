@@ -20,8 +20,8 @@ It includes JWT-based authentication, pagination, filtering and dockerization.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/book-review-api.git
-cd book-review-api
+git clone https://github.com/JaySanduke/bookReviewAPI.git
+cd bookReviewAPI
 ```
 
 ### 2. Install dependencies
@@ -73,4 +73,3 @@ npm start
   - *One-to-Many (creator)
   - *A user can create multiple books
   - *Each book is created by one user
-  

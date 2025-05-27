@@ -1,0 +1,1674 @@
+{
+	"info": {
+		"_postman_id": "64a18e76-1f9b-45c6-9014-7613a3afab63",
+		"name": "Book Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26096267"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}\n"
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"105-IYhkAH33Nh7H1cbmbBp6qEec0Pc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 23:36:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6834fb183d3fa25c843206b9\",\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzRmYjE4M2QzZmEyNWM4NDMyMDZiOSIsImlhdCI6MTc0ODMwMjYxNiwiZXhwIjoxNzQ4OTA3NDE2fQ.AVlezTSQLFyEEisbi44WsWcVZGnGkED5X1lbOQtwKF8\"\n}"
+						},
+						{
+							"name": "User Already Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}\n"
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-iGErLku/9taeeOQN+9qwFgLXnuo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 23:37:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"105-qZ1YdQuJt9D86oLxZyiTiGYQV5k\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 23:46:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6834fb183d3fa25c843206b9\",\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzRmYjE4M2QzZmEyNWM4NDMyMDZiOSIsImlhdCI6MTc0ODMwMzE3MiwiZXhwIjoxNzQ4OTA3OTcyfQ.ra06ZjNUAZcXwtziP40Zlc7-yh5bNsmkRnNUnLDbkh4\"\n}"
+						},
+						{
+							"name": "Wrong Credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"wrongpassword\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-dBEoW0UmTF+EGUMaprEp9/8zNNA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 23:46:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid credentials\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Atomic Habits\",\r\n  \"author\": \"James Clear\",\r\n  \"genre\": \"Self-help\",\r\n  \"description\": \"An insightful book about habits\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Atomic Habits\",\r\n  \"author\": \"James Clear\",\r\n  \"genre\": \"Self-help\",\r\n  \"description\": \"An insightful book about habits\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "274"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"112-V9WboGXQH0ltZKsXNxGFAFbJH1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:08:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Atomic Habits\",\n    \"author\": \"James Clear\",\n    \"genre\": \"Self-help\",\n    \"description\": \"An insightful book about habits\",\n    \"createdBy\": \"6834fb183d3fa25c843206b9\",\n    \"_id\": \"683502697e2111e7198a4008\",\n    \"createdAt\": \"2025-05-27T00:08:09.018Z\",\n    \"updatedAt\": \"2025-05-27T00:08:09.018Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Atomic Habits\",\r\n  \"author\": \"James Clear\",\r\n  \"genre\": \"Self-help\",\r\n  \"description\": \"An insightful book about habits\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:09:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "Token Not Provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Atomic Habits\",\r\n  \"author\": \"James Clear\",\r\n  \"genre\": \"Self-help\",\r\n  \"description\": \"An insightful book about habits\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-bFVbfJS/8S+MEpCNVXMiMRRXG4A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:11:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token not provided\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/api/books?page=1&limit=5&author=James&genre=Self-help",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "author",
+									"value": "James"
+								},
+								{
+									"key": "genre",
+									"value": "Self-help"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books?page=1&limit=5&author=James&genre=Self-help",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "author",
+											"value": "James"
+										},
+										{
+											"key": "genre",
+											"value": "Self-help"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"156-VnOvGuZlG6XKBE8tSI9Yc2A9IXs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:14:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"books\": [\n        {\n            \"_id\": \"683502697e2111e7198a4008\",\n            \"title\": \"Atomic Habits\",\n            \"author\": \"James Clear\",\n            \"genre\": \"Self-help\",\n            \"description\": \"An insightful book about habits\",\n            \"createdBy\": \"6834fb183d3fa25c843206b9\",\n            \"createdAt\": \"2025-05-27T00:08:09.018Z\",\n            \"updatedAt\": \"2025-05-27T00:08:09.018Z\",\n            \"__v\": 0\n        }\n    ],\n    \"currentPage\": 1,\n    \"limit\": 5,\n    \"totalBooks\": 1,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008?page=1&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"books",
+								"683502697e2111e7198a4008"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008?page=1&limit=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"683502697e2111e7198a4008"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "429"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ad-3mLu6tSaQjfoPlvEIRggaLdRm9E\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:38:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book\": {\n        \"_id\": \"683502697e2111e7198a4008\",\n        \"title\": \"Atomic Habits\",\n        \"author\": \"James Clear\",\n        \"genre\": \"Self-help\",\n        \"description\": \"An insightful book about habits\",\n        \"createdBy\": {\n            \"_id\": \"6834fb183d3fa25c843206b9\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        },\n        \"createdAt\": \"2025-05-27T00:08:09.018Z\",\n        \"updatedAt\": \"2025-05-27T00:08:09.018Z\",\n        \"__v\": 0\n    },\n    \"averageRating\": \"0.0\",\n    \"reviews\": [],\n    \"totalReviews\": 0,\n    \"currentPage\": 1,\n    \"limit\": 5,\n    \"totalPages\": 0\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008?page=1&limit=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"683502697e2111e7198a4008"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1751"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d7-KDJrRzW/+jngz2arxMjc7IBMqTY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:46:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cast to ObjectId failed for value \\\"r683502697e2111e7198a4008\\\" (type string) at path \\\"_id\\\" for model \\\"Book\\\"\",\n    \"stack\": \"CastError: Cast to ObjectId failed for value \\\"r683502697e2111e7198a4008\\\" (type string) at path \\\"_id\\\" for model \\\"Book\\\"\\n    at SchemaObjectId.cast (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\schema\\\\objectId.js:251:11)\\n    at SchemaType.applySetters (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\schemaType.js:1255:12)\\n    at SchemaType.castForQuery (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\schemaType.js:1673:17)\\n    at cast (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\cast.js:390:32)\\n    at Query.cast (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\query.js:5055:12)\\n    at Query._castConditions (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\query.js:2351:10)\\n    at model.Query._findOne (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\query.js:2674:8)\\n    at model.Query.exec (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\query.js:4604:80)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at async exports.getBookById (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\src\\\\controllers\\\\bookController.js:42:16)\"\n}"
+						},
+						{
+							"name": "Non Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/693502697e2111e7198a4008?page=1&limit=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"693502697e2111e7198a4008"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-cQwmtD1BWh61ijVnPtLbyd6fnN8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:47:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Book not found\"\n}"
+						},
+						{
+							"name": "Success With Reviews",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008?page=1&limit=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"683502697e2111e7198a4008"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "692"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b4-TcKB9HO0C3WUwF9B5383ofdTtOk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:56:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book\": {\n        \"_id\": \"683502697e2111e7198a4008\",\n        \"title\": \"Atomic Habits\",\n        \"author\": \"James Clear\",\n        \"genre\": \"Self-help\",\n        \"description\": \"An insightful book about habits\",\n        \"createdBy\": {\n            \"_id\": \"6834fb183d3fa25c843206b9\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        },\n        \"createdAt\": \"2025-05-27T00:08:09.018Z\",\n        \"updatedAt\": \"2025-05-27T00:08:09.018Z\",\n        \"__v\": 0\n    },\n    \"averageRating\": \"4.0\",\n    \"reviews\": [\n        {\n            \"_id\": \"68350d4c53e8d301d47ea38a\",\n            \"rating\": 4,\n            \"comment\": \"This book is really great\",\n            \"user\": {\n                \"_id\": \"6834fb183d3fa25c843206b9\",\n                \"name\": \"John Doe\"\n            },\n            \"book\": \"683502697e2111e7198a4008\",\n            \"createdAt\": \"2025-05-27T00:54:36.351Z\",\n            \"updatedAt\": \"2025-05-27T00:54:36.351Z\",\n            \"__v\": 0\n        }\n    ],\n    \"totalReviews\": 1,\n    \"currentPage\": 1,\n    \"limit\": 5,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Review for Book by ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 5,\r\n    \"comment\": \"This book is really great\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"books",
+								"683502697e2111e7198a4008",
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 4,\r\n    \"comment\": \"This book is really great\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008/reviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"683502697e2111e7198a4008",
+										"reviews"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ed-T0mSBj5dXGvxYYhmZCsCtIKt2z8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:54:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rating\": 4,\n    \"comment\": \"This book is really great\",\n    \"user\": \"6834fb183d3fa25c843206b9\",\n    \"book\": \"683502697e2111e7198a4008\",\n    \"_id\": \"68350d4c53e8d301d47ea38a\",\n    \"createdAt\": \"2025-05-27T00:54:36.351Z\",\n    \"updatedAt\": \"2025-05-27T00:54:36.351Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 7,\r\n    \"comment\": \"This book is really great\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008/reviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"683502697e2111e7198a4008",
+										"reviews"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "742"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e6-f8ZJeXprrxok8qNS4KiV3BzqC5k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:55:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review validation failed: rating: Path `rating` (7) is more than maximum allowed value (5).\",\n    \"stack\": \"ValidationError: Review validation failed: rating: Path `rating` (7) is more than maximum allowed value (5).\\n    at Document.invalidate (C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\document.js:3343:32)\\n    at C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\document.js:3104:17\\n    at C:\\\\Users\\\\jaysa\\\\OneDrive\\\\Documents\\\\VS Code Projects\\\\Nodejs\\\\bookReviewAPI\\\\node_modules\\\\mongoose\\\\lib\\\\schemaType.js:1407:9\\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)\"\n}"
+						},
+						{
+							"name": "Already Reviewed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 5,\r\n    \"comment\": \"This book is really great\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/books/683502697e2111e7198a4008/reviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"books",
+										"683502697e2111e7198a4008",
+										"reviews"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-Uq3lRxh2OkxpfNHILc4qVFXjagw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 00:55:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"You already reviewed this book.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 2,\r\n    \"comment\": \"This book is really greatttttt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/api/reviews/68350d4c53e8d301d47ea38a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reviews",
+								"68350d4c53e8d301d47ea38a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 2,\r\n    \"comment\": \"This book is really greatttttt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/reviews/68350d4c53e8d301d47ea38a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"reviews",
+										"68350d4c53e8d301d47ea38a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "242"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f2-uo1PuJy8NVtdmnWAdhNjKnb7Wv0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 01:12:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"68350d4c53e8d301d47ea38a\",\n    \"rating\": 2,\n    \"comment\": \"This book is really greatttttt\",\n    \"user\": \"6834fb183d3fa25c843206b9\",\n    \"book\": \"683502697e2111e7198a4008\",\n    \"createdAt\": \"2025-05-27T00:54:36.351Z\",\n    \"updatedAt\": \"2025-05-27T01:12:40.077Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 2,\r\n    \"comment\": \"This book is really greatttttt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{port}}/api/reviews/68340d4c53e8d301d47ea38a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"reviews",
+										"68340d4c53e8d301d47ea38a"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-iY3ScKIav3SBDy8VjYgMHHyx/2c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 01:13:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/api/reviews/68350d4c53e8d301d47ea38a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reviews",
+								"68350d4c53e8d301d47ea38a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Non Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/reviews/68351d4c53e8d301d47ea38a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"reviews",
+										"68351d4c53e8d301d47ea38a"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-iY3ScKIav3SBDy8VjYgMHHyx/2c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 01:14:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review not found\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/reviews/68350d4c53e8d301d47ea38a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"reviews",
+										"68350d4c53e8d301d47ea38a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-eJZH9QbGPKzQCQgLPX3JFUdcheo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 01:14:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/api/search?query=James",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "James"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/search?query=James",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "James"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "276"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"114-h0w8UA/20M3VSRbuWGdmJCnZaao\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 01:18:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"683502697e2111e7198a4008\",\n        \"title\": \"Atomic Habits\",\n        \"author\": \"James Clear\",\n        \"genre\": \"Self-help\",\n        \"description\": \"An insightful book about habits\",\n        \"createdBy\": \"6834fb183d3fa25c843206b9\",\n        \"createdAt\": \"2025-05-27T00:08:09.018Z\",\n        \"updatedAt\": \"2025-05-27T00:08:09.018Z\",\n        \"__v\": 0\n    }\n]"
+						},
+						{
+							"name": "No Results",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{port}}/api/search?query=Hello",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "Hello"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 01:19:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzRmYjE4M2QzZmEyNWM4NDMyMDZiOSIsImlhdCI6MTc0ODMwMzI1OSwiZXhwIjoxNzQ4OTA4MDU5fQ.9m8hdW2QZw9ZICIlB2Qy19Ckz5kN76XXOJmHkxfe-GM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "5000",
+			"type": "string"
+		}
+	]
+}
