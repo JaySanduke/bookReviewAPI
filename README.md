@@ -48,6 +48,14 @@ NODE_ENV=development
 npm start
 ```
 
+---
+
+## Postman Collection
+
+You can import the Postman collection from the `Book Review.postman_collection.json` file to test the API endpoints.
+
+---
+
 ## Decisions & Assumptions
 
 - *JWT used for authentication
@@ -56,6 +64,51 @@ npm start
 - *Book listing supports pagination & filtering by author/genre
 - *Mongoose is used for MongoDB interactions
 - *Central error handler standardizes API responses
+
+---
+
+## Database Schema
+
+### User Schema
+
+```javascript
+{
+  _id: ObjectId,
+  username: String,
+  email: String,
+  password: String,
+  createdAt: Date
+}
+```
+
+### Book Schema
+
+```javascript
+{
+  _id: ObjectId,
+  title: String,
+  author: String,
+  genre: String,
+  description: String,
+  createdBy: ObjectId (User),
+  createdAt: Date
+}
+```
+
+### Review Schema
+
+```javascript
+{
+  _id: ObjectId,
+  bookId: ObjectId (Book),
+  userId: ObjectId (User),
+  rating: Number (1-5),
+  comment: String,
+  createdAt: Date
+}
+```
+
+---
 
 ## Relationships of Entities
 
@@ -73,3 +126,7 @@ npm start
   - *One-to-Many (creator)
   - *A user can create multiple books
   - *Each book is created by one user
+
+## ER Diagram
+
+![ER Diagram](./ER%20Diagram.png)
