@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/bookReviewDB
+      - JWT_SECRET=StrongJWTSecret
+      - JWT_EXPIRATION=1d
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    # env_file:
+    #   - .env.production
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
